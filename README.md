@@ -10,7 +10,7 @@
 # GIỚI THIỆU MÔN HỌC
 * **Tên môn học:** Công Nghệ Phần Mềm
 * **Mã lớp:** 010412210502
-* **Năm học:** 2024-2025
+* **Năm học:** HK2 (2024-2025)
 * **Giảng viên**: Ths Nguyễn Văn Chiến 
 
 # ĐỒ ÁN CUỐI KÌ
