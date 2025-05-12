@@ -1,8 +1,9 @@
 <p align="center">
-  <a href="https://giaothongvantaitphcm.edu.vn/" title="Trường Đại học Giao thông Vận tải TP.HCM" style="border: none;">
-    <img src="https://i.imgur.com/YourImageID.png" alt="Trường Đại học Giao thông Vận tải TP.HCM | University of Transport and Communications">
+  <a href="https://giaothongvantaitphcm.edu.vn/" title="Trường Đại học Giao thông Vận tải TP.HCM">
+    <img src="https://i.imgur.com/YourImageID.png" alt="Trường Đại học Giao thông Vận tải TP.HCM" />
   </a>
 </p>
+
 
 
 # GIỚI THIỆU
