@@ -8,7 +8,7 @@
   <img src="90b05f7b-41c5-49b1-9eda-176e90fd486f.png" width="400"/>
 </p>
 
-<h1 align="center">NHẬP MÔN CÔNG NGHỆ PHẦN MỀM</h1>
+<h1 align="center">CÔNG NGHỆ PHẦN MỀM</h1>
 <p align="center">
   <img src="90b05f7b-41c5-49b1-9eda-176e90fd486f.png" alt="UTH Logo" width="400"/>
 </p>
