@@ -5,6 +5,7 @@
 " alt="Trường Đại học Giao thông Vận tải TP.HCM" />
   </a>
 </p>
+![image](https://github.com/user-attachments/assets/017e48ef-a0bf-414b-bc46-c8a6ab2875a3)
 
 
 # Thành viên nhóm
