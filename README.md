@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://www.uth.edu.vn/" title="Trường Đại học Công nghệ Giao thông Vận tải" style="border: none;">
-    <img src="https://i.imgur.com/yyy.png" alt="Trường Đại học Công nghệ Giao thông Vận tải | University of Transport Technology">
+  <a href="https://www.uth.edu.vn/" title="Trường Đại học Giao thông Vận tải" style="border: none;">
+    <img src="https://i.imgur.com/yyy.png" alt="Trường Đại học Giao thông Vận tải | University of Transport Technology">
   </a>
 </p>
 
