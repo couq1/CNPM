@@ -5,7 +5,7 @@
   </a>
 </p>
 
-<h1 align="center"><b>=CÔNG NGHỆ PHẦN MỀM</b></h1>
+<h1 align="center"><b>CÔNG NGHỆ PHẦN MỀM</b></h1>
 
 # GIỚI THIỆU MÔN HỌC
 * **Tên môn học:** Công Nghệ Phần Mềm
