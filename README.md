@@ -13,7 +13,12 @@
   <img src="90b05f7b-41c5-49b1-9eda-176e90fd486f.png" alt="UTH Logo" width="400"/>
 </p>
 
-
+<!-- Banner -->
+<p align="center">
+  <a href="https://www.uit.edu.vn/" title="Trường Đại học Công nghệ Thông tin" style="border: none;">
+    <img src="https://imgur.com/kMEBUfg" alt="Trường Đại học Công nghệ Thông tin | University of Information Technology">
+  </a>
+</p>
 
 # Thành viên nhóm
 | STT    | MSSV          | Họ và Tên              |Chức Vụ    | Github                                                  | Email                   |
