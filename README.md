@@ -4,6 +4,11 @@
     <img src="https://imgur.com/a/pAheGoo" alt="Trường Đại học Giao thông Vận tải TP.HCM" />
   </a>
 </p>
+<p align="center">
+  <img src="90b05f7b-41c5-49b1-9eda-176e90fd486f.png" width="400"/>
+</p>
+
+<h1 align="center">NHẬP MÔN CÔNG NGHỆ PHẦN MỀM</h1>
 
 
 
