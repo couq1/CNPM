@@ -1,23 +1,10 @@
 <!-- Banner -->
 <p align="center">
   <a href="https://giaothongvantaitphcm.edu.vn/" title="Trường Đại học Giao thông Vận tải TP.HCM">
-    <img src="https://imgur.com/a/pAheGoo" alt="Trường Đại học Giao thông Vận tải TP.HCM" />
+    <img src="https://imgur.com/a/jw2eeSZ" alt="Trường Đại học Giao thông Vận tải TP.HCM" />
   </a>
-</p>
-<p align="center">
-  <img src="90b05f7b-41c5-49b1-9eda-176e90fd486f.png" width="400"/>
 </p>
 
-<h1 align="center">CÔNG NGHỆ PHẦN MỀM</h1>
-<p align="center">
-  <img src="90b05f7b-41c5-49b1-9eda-176e90fd486f.png" alt="UTH Logo" width="400"/>
-</p>
-<!-- Banner -->
-<p align="center">
-  <a href="https://www.uit.edu.vn/" title="Trường Đại học Công nghệ Thông tin" style="border: none;">
-    <img src="https://i.imgur.com/WmMnSRt.png" alt="Trường Đại học Công nghệ Thông tin | University of Information Technology">
-  </a>
-</p>
 
 # Thành viên nhóm
 | STT    | MSSV          | Họ và Tên              |Chức Vụ    | Github                                                  | Email                   |
