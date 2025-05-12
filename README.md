@@ -23,7 +23,7 @@
 * **Giảng viên**: 
 
 # ĐỒ ÁN CUỐI KÌ
-* **Đề tài:** Phần mềm quản lý thư viện sách
+* **Đề tài:** Phần mềm quản lý 
 
 <!-- Footer -->
 <p align='center'> </p>
