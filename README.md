@@ -7,7 +7,7 @@
 
 
 
-# Thành viên nhóm
+# THÀNH VIÊN NHÓM
 | STT    | MSSV          | Họ và Tên              |Chức Vụ    | Github                                                  | Email                   |
 | ------ |:-------------:| ----------------------:|----------:|--------------------------------------------------------:|-------------------------:
 |   1    | 064205015699  | Lê Anh Quốc            |Thành viên |                                                         |                         |
@@ -18,13 +18,11 @@
 
 # GIỚI THIỆU MÔN HỌC
 * **Tên môn học:** Công Nghệ Phần Mềm
-* **Mã môn học:** 
-* **Mã lớp:** 
-* **Năm học:** 
-* **Giảng viên**: 
+* **Mã lớp:** 010412210502
+* **Năm học:** 2024-2025
+* **Giảng viên**: Ths Nguyễn Văn Chiến 
 
 # ĐỒ ÁN CUỐI KÌ
-* **Đề tài:** Phần mềm quản lý 
+* **Đề tài:** Phần mềm hỗ trợ kiểm tra trùng lặp ngân hàng câu hỏi
 
-<!-- Footer -->
-<p align='center'> </p>
+
