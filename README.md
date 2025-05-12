@@ -18,7 +18,7 @@
 # GIỚI THIỆU MÔN HỌC
 * **Tên môn học:** Công Nghệ Phần Mềm
 * **Mã môn học:** 
-* **Mã lớp:** SE104.L27.KHCL
+* **Mã lớp:** 
 * **Năm học:** 
 * **Giảng viên**: 
 
@@ -26,4 +26,4 @@
 * **Đề tài:** Phần mềm quản lý thư viện sách
 
 <!-- Footer -->
-<p align='center'>Copyright © 2021 - Đỗ Trọng Khánh</p>
+<p align='center'> </p>
