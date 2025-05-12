@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/33772f57-295c-42a1-951e-02e94f38115c)<!-- Banner -->
+!-- Banner -->
 <p align="center">
   <a href="https://giaothongvantaitphcm.edu.vn/" title="Trường Đại học Giao thông Vận tải TP.HCM">
     <img src="![image](https://github.com/user-attachments/assets/4609c79d-0fbd-4e48-84d1-4d336a307b42)
