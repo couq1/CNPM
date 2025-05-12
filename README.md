@@ -1,11 +1,4 @@
-<!-- Banner -->
-<p align="center">
-  <a href="https://giaothongvantaitphcm.edu.vn/" title="Trường Đại học Giao thông Vận tải TP.HCM">
-    <img src="![image](https://github.com/user-attachments/assets/6525ba58-32a5-45c6-beef-2ad9425d92db)
 
-" alt="Trường Đại học Giao thông Vận tải TP.HCM" />
-  </a>
-</p>
 
 
 # Thành viên nhóm
