@@ -1,8 +1,9 @@
 <p align="center">
-  <a href="https://www.uth.edu.vn/" title="Trường Đại học Giao thông Vận tải" style="border: none;">
-    <img src="https://i.imgur.com/yyy.png" alt="Trường Đại học Giao thông Vận tải | University of Transport Technology">
-  </a>
+  <a href="https://giaothongvantaitphcm.edu.vn/" title="Trường Đại học Giao thông Vận tải TP.HCM" style="border: none;">
+    <img src="https://i.imgur.com/YourImageID.png" alt="Trường Đại học Giao thông Vận tải TP.HCM | University of Transport and Communications">
+  </a>
 </p>
+
 
 # GIỚI THIỆU
 - Môn học Công Nghệ Phần Mềm
