@@ -19,7 +19,7 @@
 # THÀNH VIÊN NHÓM
 | STT    | MSSV          | Họ và Tên              |Chức Vụ    |
 | ------ |:-------------:| ----------------------:|----------:|
-|   1    | 064205015699  | Lê Anh Quốc            |Thành viên |
+|   1    | 064205015699  | Lê Anh Quốc            |Trưởng nhóm|
 |   2    | 066205012073  | Trương Công Danh       |Thành viên |
 |   3    | 086204004142  | Lê Trung Toàn          |Thành viên |
 |   4    | 058205008403  | Nguyễn Trung Hiếu      |Thành viên |
