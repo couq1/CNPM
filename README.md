@@ -1,8 +1,6 @@
 <!-- Banner -->
 <p align="center">
-  <a href="https://giaothongvantaitphcm.edu.vn/" title="Trường Đại học Giao thông Vận tải TP. Hồ Chí Minh" style="border: none;">
-    <img src="https://giaothongvantaitphcm.edu.vn/wp-content/uploads/2025/01/Logo-GTVT.png" alt="Trường Đại học Giao thông Vận tải TP. Hồ Chí Minh" width="400">
-  </a>
+  <img width="877" height="600" src="https://giaothongvantaitphcm.edu.vn/wp-content/uploads/2025/01/Logo-GTVT.png" class="header_logo header-logo" alt="Trường Đại học Giao thông vận tải TPHCM">
 </p>
 
 <h1 align="center"><b>CÔNG NGHỆ PHẦN MỀM</b></h1>
