@@ -1,6 +1,11 @@
 <!-- Banner -->
 <p align="center">
-  <img width="877" height="600" src="https://giaothongvantaitphcm.edu.vn/wp-content/uploads/2025/01/Logo-GTVT.png" class="header_logo header-logo" alt="Trường Đại học Giao thông vận tải TPHCM">
+  <a href="https://giaothongvantaitphcm.edu.vn/" title="Trường Đại học Giao thông vận tải" style="border: none;">
+    <img src="![image](https://github.com/user-attachments/assets/f6fd29af-9ca3-413d-8094-dd0085341071)
+" alt="Trường Đại học Công nghệ Thông tin | University of Information Technology">Add commentMore actions
+  <a href="https://www.ut.edu.vn/" title="Trường Đại học Giao thông Vận tải TP. Hồ Chí Minh" style="border: none;">
+    <img src="https://giaothongvantaitphcm.edu.vn/wp-content/uploads/2025/01/Logo-GTVT.png" alt="Trường Đại học Giao thông Vận tải TP. Hồ Chí Minh" width="400">
+  </a>
 </p>
 
 <h1 align="center"><b>CÔNG NGHỆ PHẦN MỀM</b></h1>
