@@ -1,0 +1,147 @@
+﻿@model List<QBCA.Models.SubmissionTable>
+@{
+    ViewBag.Title = "Submission Table";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+<div class="container py-4">
+    <div class="main-content-area">
+        <div style="margin-bottom: 18px;">
+            <h2 class="fw-bold mb-2" style="font-size:2.1rem;">Submission Table</h2>
+            <div class="text-secondary" style="font-size:1.18rem;">View all exam submissions here.</div>
+        </div>
+        <div class="table-container">
+            <table class="table subject-table mb-0">
+                <thead>
+                    <tr>
+                        <th style="width:5%;">ID</th>
+                        <th style="width:16%;">Exam Plan</th>
+                        <th style="width:13%;">Created By</th>
+                        <th style="width:13%;">Created At</th>
+                        <th style="width:10%;">Status</th>
+                        <th style="width:16%;">Reviewer Comment</th>
+                        <th style="width:13%;">Approved By</th>
+                        <th style="width:13%;">Approved At</th>
+                        <th style="width:8%;">Duplicate Rate</th>
+                        <th style="width:8%;">Questions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Any())
+                    {
+                        foreach (var s in Model)
+                        {
+                            <tr>
+                                <td>@s.SubmissionID</td>
+                                <td>@s.ExamPlan?.Name</td>
+                                <td>@s.Creator?.FullName</td>
+                                <td>@s.CreatedAt.AddHours(7).ToString("yyyy-MM-dd HH:mm")</td>
+                                <td>@s.FinalStatus</td>
+                                <td>@s.ReviewerComment</td>
+                                <td>@s.Approver?.FullName</td>
+                                <td>
+                                    @(s.ApprovedAt.HasValue? s.ApprovedAt.Value.AddHours(7).ToString("yyyy-MM-dd HH:mm") : "-")
+                                </td>
+                                <td>
+                                    @(s.DuplicateRate.HasValue? s.DuplicateRate.Value.ToString("P2") : "-")
+                                </td>
+                                <td>
+                                    @(s.Questions != null ? s.Questions.Count() : 0)
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="10" class="text-center py-4 text-muted">
+                                <i class="fas fa-folder-open fa-lg mb-2"></i><br />
+                                <span style="font-size:1.11rem;">No submissions found.</span>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+@section Styles {
+    <style>
+        .main-content-area {
+            margin-left: 34px;
+            margin-right: 34px;
+        }
+
+        .table-container {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 1px 6px #0000000d;
+            padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+            margin-bottom: 20px;
+        }
+
+        .subject-table {
+            border-collapse: separate;
+            border-spacing: 0;
+            font-size: 1.17rem;
+            min-width: 1100px;
+        }
+
+            .subject-table thead tr th {
+                background: #6277ea;
+                color: #fff;
+                border: none;
+                font-weight: 700;
+                font-size: 1.18rem;
+                text-align: left;
+                padding-left: 24px;
+                padding-top: 15px;
+                padding-bottom: 15px;
+            }
+
+                .subject-table thead tr th:first-child {
+                    border-top-left-radius: 11px;
+                }
+
+                .subject-table thead tr th:last-child {
+                    border-top-right-radius: 11px;
+                }
+
+            .subject-table tbody tr {
+                background: #fafbfc;
+                border-bottom: 1px solid #e6e7eb;
+            }
+
+                .subject-table tbody tr:last-child {
+                    border-bottom-left-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                }
+
+            .subject-table td {
+                vertical-align: middle;
+                padding: 0.88rem 0.8rem 0.88rem 24px;
+                font-size: 1.14rem;
+            }
+
+        @@media (max-width: 1100px) {
+            .main-content-area, .table-container {
+                margin-left: 2vw !important;
+                margin-right: 2vw !important;
+            }
+
+            .subject-table {
+                font-size: 1rem;
+            }
+
+                .subject-table thead tr th {
+                    font-size: 1rem;
+                    padding-left: 10px;
+                }
+
+                .subject-table td {
+                    padding-left: 10px;
+                    font-size: 1rem;
+                }
+        }
+    </style>
+}

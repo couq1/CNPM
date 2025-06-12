@@ -1,0 +1,113 @@
+﻿@using CNPM_QBCA.Models
+@model List<MockExamViewModel>
+@{
+    ViewBag.Title = "My Mock Exams";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+<style>
+    .neumorphic-box {
+        background: #f2f3f7;
+        border-radius: 25px;
+        box-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff;
+        padding: 40px;
+        max-width: 900px;
+        margin: auto;
+    }
+
+    .neumorphic-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0 10px;
+    }
+
+        .neumorphic-table th,
+        .neumorphic-table td {
+            background: #f2f3f7;
+            padding: 12px 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 4px 4px 8px #d1d9e6, -4px -4px 8px #ffffff;
+        }
+
+        .neumorphic-table th {
+            font-weight: bold;
+            color: #444;
+        }
+
+    .start-button,
+    .feedback-button {
+        padding: 8px 16px;
+        font-weight: 600;
+        border: none;
+        border-radius: 8px;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .start-button {
+        background-color: #4F46E5;
+        color: white;
+    }
+
+        .start-button:hover {
+            background-color: #3730A3;
+        }
+
+    .feedback-button {
+        background-color: #10B981;
+        color: white;
+        margin-left: 10px;
+    }
+
+        .feedback-button:hover {
+            background-color: #059669;
+        }
+
+    .section-wrapper {
+        padding-top: 120px;
+        min-height: 100vh;
+        background-color: #f2f3f7;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        font-weight: 700;
+        color: #333;
+    }
+</style>
+
+<section class="section-wrapper d-flex align-items-start justify-content-center">
+    <div class="neumorphic-box">
+        <h2>📘 My Mock Exams</h2>
+
+        <table class="neumorphic-table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Deadline</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var exam in Model)
+                {
+                    <tr>
+                        <td>@exam.Title</td>
+                        <td>@exam.Deadline.ToString("dd/MM/yyyy")</td>
+                        <td>@exam.Status</td>
+                        <td>
+                            <a class="start-button" href="@Url.Action("Take", "MockExam", new { id = exam.ExamId })">Start</a>
+                            @if (exam.Status == "Submitted" || exam.Status == "Feedback Given")
+                            {
+                            <a class="feedback-button" href="@Url.Action("Feedback", "MockExam", new { id = exam.ExamId })">Feedback</a>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>

@@ -1,0 +1,100 @@
+﻿@model CNPM_QBCA.Models.TaskModel
+
+@{
+    ViewBag.Title = "Task Detail";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml"; // Hoặc _LayoutHome.cshtml nếu bạn muốn
+}
+
+<section class="min-vh-100 d-flex align-items-start justify-content-center bg-light" style="padding-top: 120px;">
+    <div class="neumorphic-box">
+        <h3 class="text-center fw-bold mb-4 text-dark">📄 Task Detail</h3>
+
+        <div class="neumorphic-label">Title</div>
+        <div class="neumorphic-display">@Model.Title</div>
+
+        <div class="neumorphic-label">Description</div>
+        <div class="neumorphic-display">@Model.Description</div>
+
+        <div class="neumorphic-label">Assigned By</div>
+        <div class="neumorphic-display">@Model.AssignedBy</div>
+
+        <div class="neumorphic-label">Deadline</div>
+        <div class="neumorphic-display">@Model.Deadline.ToString("dd/MM/yyyy")</div>
+
+        <div class="neumorphic-label">Current Status</div>
+        <div class="neumorphic-display">@Model.Status</div>
+
+        <form asp-action="UpdateStatus" asp-controller="Task" method="post" class="mt-4">
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.Id)
+
+            <div class="neumorphic-label">Update Status</div>
+            <select asp-for="Status" class="neumorphic-select mb-3">
+                <option value="Pending">Pending</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+            </select>
+
+            <button type="submit" class="neumorphic-button">Save</button>
+            <a href="@Url.Action("MyTasks", "Task")" class="btn btn-link cancel-link">Cancel</a>
+        </form>
+    </div>
+</section>
+
+<style>
+    .neumorphic-box {
+        background: #f2f3f7;
+        border-radius: 25px;
+        box-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff;
+        padding: 40px;
+        max-width: 540px;
+        margin: auto;
+    }
+
+    .neumorphic-label {
+        font-weight: 600;
+        font-size: 16px;
+        margin-bottom: 6px;
+        color: #333;
+    }
+
+    .neumorphic-display {
+        background: #f2f3f7;
+        border-radius: 12px;
+        padding: 14px 20px;
+        box-shadow: inset 6px 6px 10px #d1d9e6, inset -6px -6px 10px #ffffff;
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .neumorphic-select {
+        border: none;
+        background: #f2f3f7;
+        border-radius: 12px;
+        padding: 14px 20px;
+        box-shadow: inset 6px 6px 10px #d1d9e6, inset -6px -6px 10px #ffffff;
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .neumorphic-button {
+        background-color: #4F46E5;
+        color: white;
+        padding: 12px 25px;
+        font-weight: 600;
+        border: none;
+        border-radius: 12px;
+        width: 100%;
+        box-shadow: 3px 3px 8px rgba(0,0,0,0.1);
+    }
+
+        .neumorphic-button:hover {
+            background-color: #3730A3;
+        }
+
+    .cancel-link {
+        display: block;
+        text-align: center;
+        margin-top: 12px;
+    }
+</style>

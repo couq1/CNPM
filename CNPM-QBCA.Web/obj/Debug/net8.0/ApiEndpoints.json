@@ -1,0 +1,101 @@
+[
+  {
+    "ContainingType": "CNPM_QBCA.Controllers.MockExamController",
+    "Method": "Feedback",
+    "RelativePath": "Exam/Feedback/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CNPM_QBCA.Controllers.MockExamController",
+    "Method": "MockExam",
+    "RelativePath": "Exam/MockExam",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CNPM_QBCA.Controllers.MockExamController",
+    "Method": "SaveFeedback",
+    "RelativePath": "Exam/SaveFeedback",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "MockExamId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "LecturerId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Comments",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "FeedbackDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CNPM_QBCA.Controllers.MockExamController",
+    "Method": "Submit",
+    "RelativePath": "Exam/Submit",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "examId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "answers",
+        "Type": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CNPM_QBCA.Controllers.MockExamController",
+    "Method": "Take",
+    "RelativePath": "Exam/Take/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

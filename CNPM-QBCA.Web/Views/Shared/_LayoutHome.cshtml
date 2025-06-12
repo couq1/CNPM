@@ -1,0 +1,293 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
+@{
+    string roleId = User?.Claims.FirstOrDefault(c => c.Type == "RoleID")?.Value;
+    string userName = User?.Claims.FirstOrDefault(c => c.Type == "FullName")?.Value
+                      ?? (string)ViewBag.UserName ?? "User";
+    string avatarInitials = !string.IsNullOrWhiteSpace(userName)
+        ? userName.Trim().Substring(0, 1).ToUpper() : "U";
+    ViewBag.AvatarInitials = avatarInitials;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title</title>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="@(Url.Content("~/css/dashboard.css"))" />
+    @RenderSection("Styles", required: false)
+    <style>
+        .notification-bell {
+            position: relative;
+            margin-right: 12px;
+            display: inline-block;
+        }
+
+            .notification-bell .icon-wrapper {
+                display: inline-block;
+                position: relative;
+            }
+
+        .notification-badge {
+            position: absolute;
+            top: -7px;
+            right: -10px;
+            background: #ff3b30;
+            color: #fff;
+            border-radius: 10px;
+            min-width: 18px;
+            height: 18px;
+            font-size: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 5px;
+            z-index: 3;
+            border: none;
+            box-shadow: none;
+        }
+
+        .notification-dropdown {
+            position: absolute;
+            right: -6px;
+            top: 37px;
+            min-width: 370px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 10px 28px #667eea26, 0 1.5px 9px #bfc9e640;
+            z-index: 99;
+            border: 1px solid #e7e7f5;
+            padding-bottom: 0;
+            animation: fadeIn .13s;
+            display: none;
+        }
+        @@keyframes fadeIn {
+            from
+
+        {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        }
+
+        .notification-dropdown-header {
+            border-bottom: 1px solid #ecedfa;
+            background: #f8faff;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .notification-dropdown-list {
+            list-style: none;
+            margin: 0;
+            padding: 0 0 0 0;
+        }
+
+            .notification-dropdown-list li {
+                cursor: pointer;
+                transition: background 0.13s;
+                padding: 10px 8px 7px 10px;
+                border-bottom: 1px solid #eef1f4;
+                font-size: 14px;
+            }
+
+                .notification-dropdown-list li.no-notifications {
+                    border-bottom: none;
+                    font-size: 14px;
+                }
+
+                .notification-dropdown-list li:hover {
+                    background: #f0f4fd;
+                }
+
+        .notification-message {
+            font-weight: 500;
+            color: #222;
+            font-size: 14px;
+            margin-bottom: 3px;
+            word-break: break-word;
+        }
+
+        .notification-time {
+            font-size: 13px;
+            color: #999;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            justify-content: flex-end;
+        }
+
+        .notification-dropdown-footer {
+            border-top: 1px solid #eef1f4;
+            padding: 9px 0 7px 0;
+            background: #fafcff;
+            border-radius: 0 0 12px 12px;
+        }
+    </style>
+</head>
+<body>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-logo">QBCA</span>
+            <span class="sidebar-logo-abbr">Q</span>
+        </div>
+        @if (roleId == "1")
+        {
+            @Html.Partial("_SidebarRD")
+        }
+        else if (roleId == "2")
+        {
+            @Html.Partial("_SidebarLecturer")
+        }
+        else if (roleId == "3")
+        {
+            @Html.Partial("_SidebarHeadDept")
+        }
+        else if (roleId == "4")
+        {
+            @Html.Partial("_SidebarSubjectLeader")
+        }
+        else if (roleId == "5")
+        {
+            @Html.Partial("_SidebarExamHead")
+        }
+        else
+        {
+            <span>No sidebar for your role.</span>
+        }
+    </aside>
+    <div class="main-content">
+        <!-- Header bar -->
+        <header class="top-header">
+            <div class="header-left">
+                <h2 class="app-name">Question Bank Checking Application</h2>
+                <p class="university-name">UTH University - R&D Department</p>
+            </div>
+            <div class="header-right">
+                <!-- Notifications Dropdown -->
+                <div class="notification-bell" id="headerNotiBell" style="position:relative;">
+                    <span class="icon-wrapper" title="Show Notifications" id="notiBellBtn" tabindex="0" style="position:relative;cursor:pointer;">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge" id="noti-badge" style="display:none;">0</span>
+                    </span>
+                    <div class="notification-dropdown" id="notiDropdownPanel" style="display:none;">
+                        <div class="notification-dropdown-header" style="display:flex;align-items:center;justify-content:space-between;padding:12px 18px 10px 18px;">
+                            <span style="font-weight:600;font-size:1.05em;">Notifications</span>
+                            
+                            <span><i class="fas fa-cog" style="color:#999;font-size:1.0em;"></i></span>
+                        </div>
+                        <hr style="margin:0 0 6px 0;" />
+                        <ul class="notification-dropdown-list" id="notiDropdownList" style="max-height:320px;overflow:auto;padding:0 8px;">
+                            <li class="no-notifications" style="text-align:center;color:#aaa;padding:30px 0;">
+                                You have no notifications
+                            </li>
+                        </ul>
+                        <div class="notification-dropdown-footer" style="text-align:center;padding:10px 0 6px 0;">
+                            <a href="@Url.Action("Notifications", "Notifications")" style="color:#667eea;font-weight:500;text-decoration:none;font-size:1.04em;">
+                                View All
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- User Menu -->
+                <div class="user-menu" id="userMenuContainer">
+                    <div class="user-profile" id="userProfileTrigger" tabindex="0" style="display:flex;align-items:center;">
+                        <div class="avatar" style="width:44px;height:44px;display:flex;align-items:center;justify-content:center;
+                            border-radius:50%;background:linear-gradient(135deg,#667eea 60%,#764ba2 100%);
+                            color:#fff;font-size:20px;font-weight:bold;box-shadow:0 1.5px 6px rgba(102,126,234,0.15);border:2px solid #fff;">
+                            @ViewBag.AvatarInitials
+                        </div>
+                        <div style="margin-left:12px;">
+                            <div class="profile-name" style="font-weight:600;color:#333;font-size:16px;">@ViewBag.UserName</div>
+                            <div class="profile-email" style="color:#666;font-size:13px;">@ViewBag.Email</div>
+                            <div class="profile-role" style="font-size:13px;color:#667eea;font-weight:500;">@ViewBag.RoleName</div>
+                        </div>
+                    </div>
+                    <ul class="user-dropdown" id="userDropdownContent">
+                        <li><a href="@Url.Action("Profile", "Home")"><i class="fas fa-user-circle"></i> Profile</a></li>
+                        <li><a href="@Url.Action("ChangePassword", "Auth")"><i class="fas fa-key"></i> Change Password</a></li>
+                        <li><a href="@Url.Action("Logins", "Home")"><i class="fas fa-history"></i> Logins</a></li>
+                        <li class="dropdown-divider"></li>
+                        <li><a href="@Url.Action("Logout", "Auth")"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        @RenderBody()
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="@(Url.Content("~/js/dashboard.js"))"></script>
+    <script>
+        $(document).ready(function () {
+            $(document).on('mousedown', function (e) {
+                if (!$(e.target).closest('#headerNotiBell').length) {
+                    $("#notiDropdownPanel").hide();
+                }
+            });
+            $("#notiBellBtn").on('click', function (e) {
+                $("#notiDropdownPanel").toggle();
+                if ($("#notiDropdownPanel").is(":visible")) {
+                    loadDropdownNotifications();
+                }
+            });
+            $("#notiBellBtn").on('keydown', function (e) {
+                if (e.key === "Enter" || e.key === " ") {
+                    $("#notiDropdownPanel").toggle();
+                    if ($("#notiDropdownPanel").is(":visible")) {
+                        loadDropdownNotifications();
+                    }
+                }
+            });
+            loadDropdownNotificationCount();
+        });
+
+        function loadDropdownNotificationCount() {
+            $.get('@Url.Action("DropdownUnreadCount", "Notifications")', function (data) {
+                let badge = $("#noti-badge");
+                if (data && data.count && data.count > 0) {
+                    badge.text(data.count).show();
+                } else {
+                    badge.text("0").hide();
+                }
+            });
+        }
+
+        function loadDropdownNotifications() {
+            $.get('@Url.Action("DropdownUnread", "Notifications")', function (data) {
+                let ul = $("#notiDropdownList");
+                ul.empty();
+                if (data && data.length > 0) {
+                    for (let n of data) {
+                        ul.append(
+                            `<li>
+                                <div class="notification-message">
+                                    ${n.message}
+                                </div>
+                                <div class="notification-time">
+                                    <i class="far fa-clock" style="color:#bbb;font-size:13px;"></i> ${n.createdAt}
+                                </div>
+                            </li>`
+                        );
+                    }
+                } else {
+                    ul.append(`<li class="no-notifications" style="text-align:center;color:#aaa;padding:30px 0;">
+                        You have no notifications
+                    </li>`);
+                }
+            });
+            loadDropdownNotificationCount();
+        }
+    </script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,76 @@
+﻿@model CNPM_QBCA.Models.MockExamViewModel
+@{
+    ViewBag.Title = "Do Mock Exam";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+<style>
+    .question-block {
+        margin-bottom: 30px;
+        padding: 20px;
+        border-radius: 16px;
+        background: #f2f3f7;
+        box-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff;
+    }
+
+    .question-title {
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .option {
+        margin-left: 20px;
+        margin-bottom: 8px;
+    }
+
+    .submit-btn {
+        padding: 12px 30px;
+        background-color: #4F46E5;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-weight: bold;
+    }
+
+        .submit-btn:hover {
+            background-color: #3730A3;
+        }
+</style>
+
+<section class="container mt-5 mb-5">
+    <h2 class="text-center mb-4">📝 Do Mock Exam</h2>
+
+    <div class="mb-4">
+        <h4>@Model.Title</h4>
+        <p><strong>Instructions:</strong> @Model.Instructions</p>
+    </div>
+
+    <form asp-action="Submit" asp-controller="MockExam" method="post">
+        <input type="hidden" name="examId" value="@Model.ExamId" />
+
+        @for (int i = 0; i < Model.Questions.Count; i++)
+        {
+            var q = Model.Questions[i];
+            <div class="question-block">
+                <div class="question-title">Câu hỏi @(i + 1): @q.Content</div>
+
+                <div class="option">
+                    <input type="radio" name="answers[@i]" value="A" required /> A. @q.OptionA
+                </div>
+                <div class="option">
+                    <input type="radio" name="answers[@i]" value="B" /> B. @q.OptionB
+                </div>
+                <div class="option">
+                    <input type="radio" name="answers[@i]" value="C" /> C. @q.OptionC
+                </div>
+                <div class="option">
+                    <input type="radio" name="answers[@i]" value="D" /> D. @q.OptionD
+                </div>
+            </div>
+        }
+
+        <div class="text-center mt-4">
+            <button type="submit" class="submit-btn">Nộp bài</button>
+        </div>
+    </form>
+</section>
