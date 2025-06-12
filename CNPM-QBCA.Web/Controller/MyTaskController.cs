@@ -4,23 +4,23 @@ using CNPM_QBCA.Services;
 
 namespace CNPM_QBCA.Controllers
 {
-    public class MyTasksController : Controller
+    public class TaskController : Controller
     {
         private readonly TaskService _taskService;
 
-        public MyTasksController()
+        public TaskController()
         {
             _taskService = new TaskService();
         }
 
-        // GET: /MyTasks/MyTasks
+        // GET: /Task/MyTasks
         public IActionResult MyTasks()
         {
             var task = _taskService.GetTasksForUser("Lecturer A"); // Sau này thay bằng User.Identity.Name
             return View(task);
         }
 
-        // GET: /MyTasks/Details/5
+        // GET: /Task/Details/5
         public IActionResult Details(int id)
         {
             var task = _taskService.GetTaskById(id);
@@ -31,7 +31,7 @@ namespace CNPM_QBCA.Controllers
             return View(task);
         }
 
-        // POST: /MyTasks/UpdateStatus
+        // POST: /Task/UpdateStatus
         [HttpPost]
         public IActionResult UpdateStatus(int id, string newStatus)
         {

@@ -1,21 +1,29 @@
-﻿
-namespace CNPM_QBCA.Controllers
+﻿using CNPM_QBCA.Models;
+
+namespace CNPM_QBCA.Services
 {
-    internal class TaskService
+    public class TaskService
     {
-        internal string? GetTaskById(int id)
+        private static List<TaskModel> tasks = new List<TaskModel>
         {
-            throw new NotImplementedException();
+            new TaskModel { Id = 1, Title = "Soát đề HK1", Description = "Kiểm tra nội dung & trùng lặp", AssignedBy = "Head of Dept", AssignedTo = "Lecturer A", Deadline = DateTime.Now.AddDays(3), Status = "Pending" },
+            new TaskModel { Id = 2, Title = "Đánh giá đề thi thử", Description = "Phân tích mức độ khó", AssignedBy = "Subject Leader", AssignedTo = "Lecturer A", Deadline = DateTime.Now.AddDays(5), Status = "In Progress" }
+        };
+
+        public List<TaskModel> GetTasksForUser(string user)
+        {
+            return tasks.Where(t => t.AssignedTo == user).ToList();
         }
 
-        internal string? GetTasksForUser(string v)
+        public TaskModel GetTaskById(int id)
         {
-            throw new NotImplementedException();
+            return tasks.FirstOrDefault(t => t.Id == id);
         }
 
-        internal void UpdateTaskStatus(int id, string newStatus)
+        public void UpdateTaskStatus(int id, string status)
         {
-            throw new NotImplementedException();
+            var task = tasks.FirstOrDefault(t => t.Id == id);
+            if (task != null) task.Status = status;
         }
     }
 }

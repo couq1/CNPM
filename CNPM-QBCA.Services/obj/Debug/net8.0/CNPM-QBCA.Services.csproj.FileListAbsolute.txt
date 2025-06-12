@@ -33,3 +33,4 @@ E:\login\CNPM-master\CNPM-master\CNPM-QBCA.Services\obj\Debug\net8.0\CNPM-QBCA.S
 E:\login\CNPM-master\CNPM-master\CNPM-QBCA.Services\obj\Debug\net8.0\refint\CNPM-QBCA.Services.dll
 E:\login\CNPM-master\CNPM-master\CNPM-QBCA.Services\obj\Debug\net8.0\CNPM-QBCA.Services.pdb
 E:\login\CNPM-master\CNPM-master\CNPM-QBCA.Services\obj\Debug\net8.0\ref\CNPM-QBCA.Services.dll
+E:\login\CNPM-master\CNPM-master\CNPM-QBCA.Services\obj\Debug\net8.0\CNPM-QBCA.Services.sourcelink.json

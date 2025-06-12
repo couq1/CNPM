@@ -27,3 +27,4 @@ E:\login\CNPM-master\CNPM-master\CNPM-QBCA.Repositories\obj\Debug\net8.0\refint\
 E:\login\CNPM-master\CNPM-master\CNPM-QBCA.Repositories\obj\Debug\net8.0\CNPM-QBCA.Repositories.pdb
 E:\login\CNPM-master\CNPM-master\CNPM-QBCA.Repositories\obj\Debug\net8.0\CNPM-QBCA.Repositories.genruntimeconfig.cache
 E:\login\CNPM-master\CNPM-master\CNPM-QBCA.Repositories\obj\Debug\net8.0\ref\CNPM-QBCA.Repositories.dll
+E:\login\CNPM-master\CNPM-master\CNPM-QBCA.Repositories\obj\Debug\net8.0\CNPM-QBCA.Repositories.sourcelink.json

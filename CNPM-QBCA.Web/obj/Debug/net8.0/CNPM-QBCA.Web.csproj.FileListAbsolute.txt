@@ -359,3 +359,4 @@ E:\login\CNPM-master\CNPM-master\CNPM-QBCA.Web\obj\Debug\net8.0\CNPM-QBCA.Web.pd
 E:\login\CNPM-master\CNPM-master\CNPM-QBCA.Web\obj\Debug\net8.0\CNPM-QBCA.Web.genruntimeconfig.cache
 E:\login\CNPM-master\CNPM-master\CNPM-QBCA.Web\obj\Debug\net8.0\ref\CNPM-QBCA.Web.dll
 E:\login\CNPM-master\CNPM-master\CNPM-QBCA.Web\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+E:\login\CNPM-master\CNPM-master\CNPM-QBCA.Web\obj\Debug\net8.0\CNPM-QBCA.Web.sourcelink.json

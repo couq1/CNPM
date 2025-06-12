@@ -29,3 +29,4 @@ E:\login\CNPM-master\CNPM-master\CNPM-QBCA.Business\obj\Debug\net8.0\CNPM-QBCA.B
 E:\login\CNPM-master\CNPM-master\CNPM-QBCA.Business\obj\Debug\net8.0\refint\CNPM-QBCA.Business.dll
 E:\login\CNPM-master\CNPM-master\CNPM-QBCA.Business\obj\Debug\net8.0\CNPM-QBCA.Business.pdb
 E:\login\CNPM-master\CNPM-master\CNPM-QBCA.Business\obj\Debug\net8.0\ref\CNPM-QBCA.Business.dll
+E:\login\CNPM-master\CNPM-master\CNPM-QBCA.Business\obj\Debug\net8.0\CNPM-QBCA.Business.sourcelink.json
